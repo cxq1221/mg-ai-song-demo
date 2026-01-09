@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AI音乐工坊 Design System - Mobile First */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    /* Core palette - Deep dark with vibrant accents */
+    --background: 240 15% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 15% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 15% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Primary - Electric Blue */
+    --primary: 210 100% 60%;
+    --primary-foreground: 240 15% 8%;
+
+    /* Secondary - Deep Purple */
+    --secondary: 260 60% 50%;
+    --secondary-foreground: 0 0% 98%;
+
+    /* Accent - Coral Orange for warmth */
+    --accent: 20 100% 60%;
+    --accent-foreground: 240 15% 8%;
+
+    --muted: 240 10% 20%;
+    --muted-foreground: 240 5% 65%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 10% 20%;
+    --input: 240 10% 18%;
+    --ring: 210 100% 60%;
+
+    --radius: 1rem;
+
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(210, 100%, 60%) 0%, hsl(260, 60%, 50%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(20, 100%, 60%) 0%, hsl(340, 80%, 55%) 100%);
+    --gradient-surface: linear-gradient(180deg, hsl(240, 15%, 14%) 0%, hsl(240, 15%, 10%) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%);
+    
+    /* Glow effects */
+    --glow-primary: 0 0 40px hsl(210, 100%, 60%, 0.3);
+    --glow-accent: 0 0 40px hsl(20, 100%, 60%, 0.3);
+    --glow-secondary: 0 0 40px hsl(260, 60%, 50%, 0.3);
+
+    /* Shadows */
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --shadow-button: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+    /* Sidebar - keeping defaults for compatibility */
+    --sidebar-background: 240 15% 8%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 210 100% 60%;
+    --sidebar-primary-foreground: 240 15% 8%;
+    --sidebar-accent: 240 10% 20%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 240 10% 20%;
+    --sidebar-ring: 210 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+}
+
+@layer utilities {
+  /* Glass morphism */
+  .glass {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-accent {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glow effects */
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+
+  .glow-accent {
+    box-shadow: var(--glow-accent);
+  }
+
+  /* Animations */
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: var(--glow-primary); }
+    50% { box-shadow: 0 0 60px hsl(210, 100%, 60%, 0.5); }
+  }
+
+  @keyframes wave {
+    0%, 100% { transform: scaleY(0.5); }
+    50% { transform: scaleY(1); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-wave {
+    animation: wave 1s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Safe area padding for mobile */
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .safe-top {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}
