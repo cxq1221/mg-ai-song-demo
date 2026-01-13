@@ -131,9 +131,12 @@ export default function MyVoices() {
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end" className="w-40">
-                      <DropdownMenuItem className="gap-2">
+                      <DropdownMenuItem 
+                        className="gap-2"
+                        onClick={() => navigate("/create")}
+                      >
                         <Sparkles className="w-4 h-4" />
-                        合成语音
+                        生成音乐
                       </DropdownMenuItem>
                       <DropdownMenuItem className="gap-2 text-destructive">
                         <Trash2 className="w-4 h-4" />

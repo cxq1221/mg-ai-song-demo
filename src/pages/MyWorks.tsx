@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Play, Pause, MoreVertical, Scissors, Share2, Trash2, Music, ArrowLeft } from "lucide-react";
+import { Play, Pause, MoreVertical, Scissors, Share2, Trash2, Music, ArrowLeft, Video } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -48,6 +49,7 @@ const works = [
 
 export default function MyWorks() {
   const navigate = useNavigate();
+  const { toast } = useToast();
   const [playingId, setPlayingId] = useState<number | null>(null);
 
   return (
@@ -139,9 +141,17 @@ export default function MyWorks() {
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end" className="w-40">
-                      <DropdownMenuItem className="gap-2">
-                        <Share2 className="w-4 h-4" />
-                        分享作品
+                      <DropdownMenuItem 
+                        className="gap-2"
+                        onClick={() => {
+                          toast({
+                            title: "功能待开发",
+                            description: "后续会跳转到 AI Vlog 制作页面",
+                          });
+                        }}
+                      >
+                        <Video className="w-4 h-4" />
+                        制作 vlog
                       </DropdownMenuItem>
                       <DropdownMenuItem className="gap-2 text-destructive">
                         <Trash2 className="w-4 h-4" />

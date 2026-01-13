@@ -12,6 +12,9 @@ const navItems = [
   // { icon: User, label: "我的音乐", path: "/works" },
 ];
 
+// 导出导航路径列表，用于判断是否显示导航栏
+export const navPaths = navItems.map(item => item.path);
+
 export function MobileNav() {
   const location = useLocation();
 

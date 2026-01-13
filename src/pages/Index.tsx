@@ -1,8 +1,10 @@
 import { Mic, Music, Sparkles, FileMusic, Wand2, Scissors, Badge, Video, Volume2, User } from "lucide-react";
+import { Link } from "react-router-dom";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { FeatureCard } from "@/components/home/FeatureCard";
 import { QuickAction } from "@/components/home/QuickAction";
 import { WaveAnimation } from "@/components/home/WaveAnimation";
+import { cn } from "@/lib/utils";
 
 const features = [
   // {
@@ -108,14 +110,26 @@ export default function Index() {
         {/* Stats */}
         <section className="glass rounded-2xl p-5">
           <div className="grid grid-cols-2 gap-4 text-center">
-            <div>
+            <Link
+              to="/works"
+              className={cn(
+                "flex flex-col items-center gap-1 p-3 rounded-xl transition-all duration-300",
+                "hover:bg-primary/10 hover:scale-105 active:scale-95 cursor-pointer"
+              )}
+            >
               <p className="text-2xl font-bold gradient-text">1000+</p>
               <p className="text-xs text-muted-foreground">我的音乐</p>
-            </div>
-            <div>
+            </Link>
+            <Link
+              to="/my-voices"
+              className={cn(
+                "flex flex-col items-center gap-1 p-3 rounded-xl transition-all duration-300",
+                "hover:bg-accent/10 hover:scale-105 active:scale-95 cursor-pointer"
+              )}
+            >
               <p className="text-2xl font-bold gradient-text-accent">50+</p>
               <p className="text-xs text-muted-foreground">我的声音</p>
-            </div>
+            </Link>
           </div>
         </section>
       </div>

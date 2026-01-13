@@ -67,7 +67,7 @@ export default function CreateMusic() {
           variant="ghost" 
           size="sm"
           className="text-muted-foreground"
-          onClick={() => navigate("/my-voices")}
+          onClick={() => navigate("/works")}
         >
           我的音乐
         </Button>
