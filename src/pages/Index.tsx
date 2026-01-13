@@ -104,50 +104,17 @@ export default function Index() {
           </div>
         </section>
 
-        {/* My Content */}
-        <section>
-          <h3 className="text-lg font-semibold text-foreground mb-4">我的内容</h3>
-          <div className="grid grid-cols-2 gap-4">
-            
-            <QuickAction
-              icon={User}
-              label="我的音乐"
-              path="/works"
-              variant="accent"
-            />
-            <QuickAction
-              icon={Volume2}
-              label="我的声音"
-              path="/my-voices"
-              variant="primary"
-            />
-          </div>
-        </section>
-
-        {/* All Features */}
-        {/* <section>
-          <h3 className="text-lg font-semibold text-foreground mb-4">全部功能</h3>
-          <div className="grid grid-cols-2 gap-3">
-            {features.map((feature, index) => (
-              <FeatureCard
-                key={feature.path}
-                {...feature}
-                delay={index * 50}
-              />
-            ))}
-          </div>
-        </section> */}
 
         {/* Stats */}
         <section className="glass rounded-2xl p-5">
           <div className="grid grid-cols-2 gap-4 text-center">
             <div>
               <p className="text-2xl font-bold gradient-text">1000+</p>
-              <p className="text-xs text-muted-foreground">创作歌曲</p>
+              <p className="text-xs text-muted-foreground">我的音乐</p>
             </div>
             <div>
               <p className="text-2xl font-bold gradient-text-accent">50+</p>
-              <p className="text-xs text-muted-foreground">音乐风格</p>
+              <p className="text-xs text-muted-foreground">我的声音</p>
             </div>
           </div>
         </section>

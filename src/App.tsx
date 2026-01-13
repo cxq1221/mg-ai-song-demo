@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import VoiceClone from "./pages/VoiceClone";
 import CreateMusic from "./pages/CreateMusic";
+import CreateMusicPreview from "./pages/CreateMusicPreview";
 import Templates from "./pages/Templates";
 import MyWorks from "./pages/MyWorks";
 import MyVoices from "./pages/MyVoices";
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/voice-clone" element={<VoiceClone />} />
           <Route path="/create" element={<CreateMusic />} />
+          <Route path="/create/preview" element={<CreateMusicPreview />} />
           <Route path="/templates" element={<Templates />} />
           <Route path="/my-voices" element={<MyVoices />} />
           <Route path="/works" element={<MyWorks />} />

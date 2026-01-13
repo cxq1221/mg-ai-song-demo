@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Mic, Play, Pause, RotateCcw, Check, Volume2 } from "lucide-react";
+import { Mic, Play, Pause, RotateCcw, Check } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { Button } from "@/components/ui/button";
@@ -99,11 +99,11 @@ export default function VoiceClone() {
       headerRightAction={
         <Button 
           variant="ghost" 
-          size="icon" 
+          size="sm"
           className="text-muted-foreground"
           onClick={() => navigate("/my-voices")}
         >
-          <Volume2 className="w-5 h-5" />
+          我的声音
         </Button>
       }
     >

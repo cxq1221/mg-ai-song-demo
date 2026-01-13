@@ -140,10 +140,6 @@ export default function MyWorks() {
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end" className="w-40">
                       <DropdownMenuItem className="gap-2">
-                        <Scissors className="w-4 h-4" />
-                        编辑剪辑
-                      </DropdownMenuItem>
-                      <DropdownMenuItem className="gap-2">
                         <Share2 className="w-4 h-4" />
                         分享作品
                       </DropdownMenuItem>
